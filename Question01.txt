@@ -1,0 +1,10 @@
+input_string = input("Enter a string: ")
+
+repeated_chars = []
+
+for char in input_string:
+    # If the character appears more than once in the input string and is not already in the repeated_chars list, add it to the list
+    if input_string.count(char) > 1 and char not in repeated_chars:
+        repeated_chars.append(char)
+
+print("Repeated characters in the string are:", repeated_chars)

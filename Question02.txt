@@ -1,0 +1,19 @@
+valid_numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+number = int(input("Enter a number between 1 and 10: "))
+
+if number not in valid_numbers:
+    print("Invalid number entered.")
+else:
+ 
+    data = (number,)
+    
+    try:
+        data[1] = 5
+    except TypeError:
+        print("Tuple does not allow assignment of values.")
+
+    try:
+        data.append(5)
+    except AttributeError:
+        print("Tuple does not allow append operation.")

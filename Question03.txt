@@ -1,0 +1,10 @@
+details = {}
+while True:
+    key = input("Enter a key (or press enter to stop): ")
+    if key == "":
+        break
+    value = input("Enter a value: ")
+    details[key] = value
+
+
+print("Details:", details)

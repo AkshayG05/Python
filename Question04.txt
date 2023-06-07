@@ -1,0 +1,34 @@
+class HPC_2023_Lab_Exam:
+    def verify_cdac_student(self, name):
+        if name.lower().startswith("cdac") and name.lower().endswith("pune"):
+            with open("student_data.txt", "a") as file:
+                file.write(name + "\n")
+        else:
+            print("Invalid student entry.")
+    
+    def read_student_details_from_file(self):
+        admitted_students = []
+        with open("student_data.txt", "r") as file:
+            lines = file.readlines()
+            for line in lines:
+                admitted_students.append(line.strip())
+        return admitted_students
+
+class HPC_2023(HPC_2023_Lab_Exam):
+    def display_student_name_with_status(self):
+        admitted_students = self.read_student_details_from_file()
+        
+        for i in range(len(admitted_students)):
+            admitted_students[i] = admitted_students[i] + " (active)"
+        
+        print("List of admitted students:")
+        for student in admitted_students:
+            print(student)
+
+exam = HPC_2023()
+
+name = input("Enter the student name: ")
+
+exam.verify_cdac_student(name)
+
+exam.display_student_name_with_status()
